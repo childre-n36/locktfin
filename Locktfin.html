@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locktfin — Lock In. Get It Done.</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      padding: 60px 30px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #7cffd9, #7aa2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #cfcfcf;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7cffd9, #7aa2ff);
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(122,162,255,0.35);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: left;
+      backdrop-filter: blur(12px);
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #bdbdbd;
+      margin: 0;
+    }
+
+    footer {
+      margin-top: 70px;
+      font-size: 14px;
+      color: #8a8a8a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="badge">🚀 Built for focus addicts</div>
+
+    <h1>Lock In.<br><span>Actually Get Sh*t Done.</span></h1>
+
+    <p>
+      Locktfin is a clean, distraction-free focus timer designed for students,
+      creators, and grinders who are tired of fake productivity.
+    </p>
+
+    <div class="buttons">
+      <a href="https://www.mediafire.com/file/7en4pq10wnlf36u/Locktfin+Setup+1.0.0.exe/file">
+      <button class="btn btn-primary">Download Locktfin</button></a>
+      <a href="how.html">
+      <button class="btn btn-secondary">See How It Works</button></a>
+    </div>
+
+    <div class="features">
+      <div class="card">
+        <h3>🧠 Deep Focus Mode</h3>
+        <p>No clutter. No dopamine traps. Just you and the task.</p>
+      </div>
+
+      <div class="card">
+        <h3>⏱ Smart Breaks</h3>
+        <p>Timed breaks that don’t spiral into scrolling hell.</p>
+      </div>
+
+      <div class="card">
+        <h3>🎧 Clean Alerts</h3>
+        <p>Subtle sounds that notify without breaking your flow.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Lightweight</h3>
+        <p>Fast, minimal, and doesn’t cook your system.</p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 Locktfin — Lock in or fall behind.
+    </footer>
+  </div>
+
+</body>
+</html>

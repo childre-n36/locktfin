@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>How Locktfin Works</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #151515, #000);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 30px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #7cffd9, #7aa2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #cfcfcf;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.25s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-6px);
+    }
+
+    .step-number {
+      font-size: 14px;
+      opacity: 0.6;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      font-size: 15px;
+      color: #bdbdbd;
+      line-height: 1.6;
+    }
+
+    .flow {
+      margin-top: 90px;
+      text-align: center;
+    }
+
+    .flow h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .flow p {
+      color: #cfcfcf;
+      max-width: 700px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .cta {
+      margin-top: 70px;
+      text-align: center;
+    }
+
+    .cta button {
+      padding: 18px 32px;
+      border-radius: 16px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #7cffd9, #7aa2ff);
+      color: #000;
+      transition: all 0.25s ease;
+    }
+
+    .cta button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(122,162,255,0.35);
+    }
+
+    footer {
+      margin-top: 90px;
+      text-align: center;
+      font-size: 14px;
+      color: #8a8a8a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="badge">🧩 Simple by design</div>
+      <h1>How <span>Locktfin</span> Works</h1>
+      <p class="subtitle">
+        No complicated systems. No productivity theater.  
+        Just a clean loop that forces focus and respects your time.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">STEP 01</div>
+        <h3>Set Your Focus Time</h3>
+        <p>
+          Choose how long you want to lock in.  
+          No presets that baby you — you decide the grind.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 02</div>
+        <h3>Lock In & Work</h3>
+        <p>
+          Timer starts. Distractions stop mattering.  
+          You work until the session ends. Simple.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 03</div>
+        <h3>Take a Controlled Break</h3>
+        <p>
+          Short breaks that refresh you —  
+          not long enough to fall into scrolling hell.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 04</div>
+        <h3>End or Continue</h3>
+        <p>
+          After your session, you choose:  
+          stop clean or run it back for another round.
+        </p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <h2>That’s the whole system.</h2>
+      <p>
+        Locktfin isn’t trying to gamify your brain.  
+        It just gives you structure — the discipline is on you.
+      </p>
+    </div>
+
+    <div class="cta">
+        <a href="https://www.mediafire.com/file/7en4pq10wnlf36u/Locktfin+Setup+1.0.0.exe/file">
+      <button>Start Locking In</button></a>
+    </div>
+
+    <footer>
+      © 2026 Locktfin — Focus isn’t optional.
+    </footer>
+  </div>
+
+</body>
+</html>
