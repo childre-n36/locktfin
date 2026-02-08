@@ -63,7 +63,7 @@ KNOWN NOTES
 --------------------------------------------------
 CREDITS
 --------------------------------------------------
-Built by: Chillixi
+Built by: Me
 Powered by: HTML, CSS, JavaScript, Electron
 
 --------------------------------------------------
