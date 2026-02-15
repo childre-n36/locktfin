@@ -22,12 +22,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* subtle glow layer */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(122,162,255,0.15), transparent 60%);
+      top: -200px;
+      right: -200px;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .container {
       max-width: 1100px;
-      padding: 60px 30px;
+      padding: 80px 30px;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .badge {
@@ -36,7 +52,7 @@
       background: rgba(255,255,255,0.08);
       border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       backdrop-filter: blur(10px);
     }
 
@@ -44,7 +60,7 @@
       font-size: clamp(40px, 6vw, 72px);
       font-weight: 800;
       line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     h1 span {
@@ -56,8 +72,9 @@
     p {
       font-size: 18px;
       max-width: 700px;
-      margin: 0 auto 40px;
+      margin: 0 auto 24px;
       color: #cfcfcf;
+      line-height: 1.6;
     }
 
     .buttons {
@@ -65,16 +82,17 @@
       gap: 20px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-bottom: 60px;
+      margin: 50px 0 70px;
     }
 
     .btn {
+      display: inline-block;
       padding: 16px 28px;
       border-radius: 14px;
       font-weight: 600;
       font-size: 16px;
+      text-decoration: none;
       cursor: pointer;
-      border: none;
       transition: all 0.25s ease;
     }
 
@@ -113,11 +131,12 @@
       padding: 30px;
       text-align: left;
       backdrop-filter: blur(12px);
-      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
     .card h3 {
@@ -131,32 +150,24 @@
       margin: 0;
     }
 
+    .android-teaser {
+      margin: 40px auto 10px;
+      padding: 10px 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(162, 255, 122, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      font-size: 14px;
+      color: #7cffd9;
+    }
+
     footer {
-      margin-top: 70px;
+      margin-top: 80px;
       font-size: 14px;
       color: #8a8a8a;
     }
-    .android-teaser {
-  margin: 40px auto 10px;
-  padding: 10px 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(162, 255, 122, 0.05); /* Very subtle green glow */
-  border: 1px border rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  font-size: 14px;
-  color: #7cffd9;
-}
-
-.android-teaser span {
-  filter: grayscale(1); /* Keeps the icon subtle until they hover */
-  transition: 0.3s;
-}
-
-.android-teaser:hover span {
-  filter: grayscale(0);
-}
   </style>
 </head>
 <body>
@@ -170,16 +181,19 @@
       LockTfIn is a clean, distraction-free focus timer designed for students,
       creators, and grinders who are tired of fake productivity.
     </p>
-    <br>
+
     <p>
       Make sure to check out how it works page.
     </p>
 
     <div class="buttons">
-      <a href="https://www.mediafire.com/file/q2scp2wlzksx9hu/Lock_tf_in_Setup_1.0.3.exe/file">
-      <button class="btn btn-primary">Download LockTfIn</button></a>
-      <a href="how.html">
-      <button class="btn btn-secondary">See How It Works</button></a>
+      <a class="btn btn-primary" href="https://www.mediafire.com/file/bfc7iqklrnf3de6/Lock_tf_in_Setup_1.0.4.exe/file">
+        Download LockTfIn
+      </a>
+
+      <a class="btn btn-secondary" href="how.html">
+        See How It Works
+      </a>
     </div>
 
     <div class="features">
@@ -209,36 +223,15 @@
       </div>
       
       <div class="card" style="opacity: 0.5; border-style: dashed;">
-      <h3>📱 Android Version</h3>
-    <p>Coming soon. Get ready to lock in on the go.</p>
+        <h3>📱 Android Version</h3>
+        <p>Coming soon. Get ready to lock in on the go.</p>
+      </div>
     </div>
-  </div>
-
-    
-  
 
     <footer>
       © 2026 LockTfIn — Lock in or fall behind.
-    </footer>
-
-    <footer>
-      Coming soon for android!
     </footer>
   </div>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
