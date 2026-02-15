@@ -19,17 +19,33 @@
       min-height: 100vh;
       background: radial-gradient(circle at top, #151515, #000);
       color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* subtle glow like homepage */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(122,162,255,0.15), transparent 60%);
+      top: -200px;
+      right: -200px;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 80px 30px;
+      padding: 100px 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .header {
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 90px;
     }
 
     .badge {
@@ -38,7 +54,7 @@
       background: rgba(255,255,255,0.08);
       border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       backdrop-filter: blur(10px);
     }
 
@@ -46,7 +62,7 @@
       font-size: clamp(42px, 6vw, 72px);
       font-weight: 800;
       line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     h1 span {
@@ -60,13 +76,14 @@
       color: #cfcfcf;
       max-width: 720px;
       margin: auto;
+      line-height: 1.6;
     }
 
     .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
-      margin-top: 60px;
+      margin-top: 70px;
     }
 
     .step {
@@ -75,17 +92,19 @@
       border-radius: 22px;
       padding: 32px;
       backdrop-filter: blur(12px);
-      transition: transform 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .step:hover {
       transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     }
 
     .step-number {
       font-size: 14px;
       opacity: 0.6;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     .step h3 {
@@ -100,13 +119,13 @@
     }
 
     .flow {
-      margin-top: 90px;
+      margin-top: 100px;
       text-align: center;
     }
 
     .flow h2 {
       font-size: 36px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .flow p {
@@ -114,32 +133,33 @@
       max-width: 700px;
       margin: auto;
       font-size: 17px;
+      line-height: 1.6;
     }
 
     .cta {
-      margin-top: 70px;
+      margin-top: 80px;
       text-align: center;
     }
 
-    .cta button {
+    .btn-primary {
+      display: inline-block;
       padding: 18px 32px;
       border-radius: 16px;
-      border: none;
       font-size: 16px;
       font-weight: 600;
-      cursor: pointer;
+      text-decoration: none;
       background: linear-gradient(135deg, #7cffd9, #7aa2ff);
       color: #000;
       transition: all 0.25s ease;
     }
 
-    .cta button:hover {
+    .btn-primary:hover {
       transform: translateY(-3px);
       box-shadow: 0 20px 40px rgba(122,162,255,0.35);
     }
 
     footer {
-      margin-top: 90px;
+      margin-top: 100px;
       text-align: center;
       font-size: 14px;
       color: #8a8a8a;
@@ -157,15 +177,14 @@
         Just a clean loop that forces focus and respects your time.
       </p>
       <p style="
-  margin-top: 16px;
-  font-size: 14px;
-  color: #9a9a9a;
-  opacity: 0.9;
-">
-  ⚠️ Heads up: minimizing this app slows the timer —  
-  it’s intentional. Lock in, stay present.
-</p>
-
+        margin-top: 16px;
+        font-size: 14px;
+        color: #9a9a9a;
+        opacity: 0.9;
+      ">
+        ⚠️ Heads up: minimizing this app slows the timer —  
+        it’s intentional. Lock in, stay present.
+      </p>
     </div>
 
     <div class="steps">
@@ -215,8 +234,9 @@
     </div>
 
     <div class="cta">
-        <a href="https://www.mediafire.com/file/q2scp2wlzksx9hu/Lock_tf_in_Setup_1.0.3.exe/file">
-      <button>Start Locking In</button></a>
+      <a class="btn-primary" href="https://www.mediafire.com/file/bfc7iqklrnf3de6/Lock_tf_in_Setup_1.0.4.exe/file">
+        Start Locking In
+      </a>
     </div>
 
     <footer>
@@ -226,12 +246,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
