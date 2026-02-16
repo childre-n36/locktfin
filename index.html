@@ -5,9 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LockTfIn — Lock In. Get It Done.</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #06070c;
+      --bg-soft: #10131d;
+      --text: #f3f4f8;
+      --muted: #b7bdd0;
+      --line: rgba(255, 255, 255, 0.12);
+      --primary: #7cffd9;
+      --secondary: #7aa2ff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -17,174 +27,266 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(124, 255, 217, 0.14), transparent 36%),
+        radial-gradient(circle at 85% 0%, rgba(122, 162, 255, 0.16), transparent 40%),
+        linear-gradient(180deg, #0a0d15 0%, #05060a 65%, #040407 100%);
+      color: var(--text);
       overflow-x: hidden;
     }
 
-    /* subtle glow layer */
-    body::before {
+    body::before,
+    body::after {
       content: "";
       position: fixed;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(122,162,255,0.15), transparent 60%);
-      top: -200px;
-      right: -200px;
       z-index: 0;
       pointer-events: none;
+      filter: blur(8px);
+    }
+
+    body::before {
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(122, 162, 255, 0.25), transparent 68%);
+      top: -120px;
+      right: -100px;
+    }
+
+    body::after {
+      width: 500px;
+      height: 500px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(124, 255, 217, 0.12), transparent 68%);
+      bottom: -220px;
+      left: -140px;
     }
 
     .container {
-      max-width: 1100px;
-      padding: 80px 30px;
-      text-align: center;
+      width: min(1150px, 92vw);
+      margin: 44px auto;
+      padding: clamp(30px, 4vw, 56px);
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
       position: relative;
       z-index: 1;
+      backdrop-filter: blur(15px);
     }
 
     .badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 16px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 24px;
-      backdrop-filter: blur(10px);
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      margin-bottom: 22px;
     }
 
-    h1 {
-      font-size: clamp(40px, 6vw, 72px);
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 76px);
       font-weight: 800;
-      line-height: 1.05;
-      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+      line-height: 1.03;
+      margin-bottom: 20px;
+      text-wrap: balance;
     }
 
-    h1 span {
-      background: linear-gradient(90deg, #7cffd9, #7aa2ff);
+    h1 span,
+    .section-title span {
+      background: linear-gradient(95deg, var(--primary), var(--secondary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    p {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 24px;
-      color: #cfcfcf;
-      line-height: 1.6;
+    .hero p {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: clamp(16px, 1.8vw, 20px);
+      line-height: 1.65;
+    }
+
+    .hero-note {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #9fa7bd;
     }
 
     .buttons {
       display: flex;
-      gap: 20px;
-      justify-content: center;
       flex-wrap: wrap;
-      margin: 50px 0 70px;
+      gap: 16px;
+      margin: 34px 0 32px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 16px 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
       border-radius: 14px;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 15px;
       text-decoration: none;
-      cursor: pointer;
-      transition: all 0.25s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: 1px solid transparent;
+      min-width: 215px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #7cffd9, #7aa2ff);
-      color: #000;
+      color: #050608;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 20px 40px rgba(122,162,255,0.35);
+      box-shadow: 0 16px 28px rgba(122, 162, 255, 0.35);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--line);
     }
 
     .btn-secondary:hover {
-      background: rgba(255,255,255,0.14);
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-3px);
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+      margin-bottom: 46px;
+    }
+
+    .stat {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .stat strong {
+      font-size: 21px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      font-size: 13px;
+      color: #aeb4c8;
+    }
+
+    .section-title {
+      font-size: clamp(27px, 4vw, 40px);
+      margin-bottom: 20px;
+      letter-spacing: -0.6px;
     }
 
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+      gap: 18px;
     }
 
     .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 30px;
-      text-align: left;
-      backdrop-filter: blur(12px);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.35);
     }
 
     .card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
+      font-size: 18px;
+      margin-bottom: 9px;
     }
 
     .card p {
       font-size: 15px;
-      color: #bdbdbd;
-      margin: 0;
+      color: #bec4d6;
+      line-height: 1.55;
     }
 
     footer {
-      margin-top: 80px;
-      font-size: 14px;
-      color: #8a8a8a;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+      color: #8e94a8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        margin: 18px auto;
+        border-radius: 20px;
+      }
+
+      .buttons {
+        margin-top: 26px;
+      }
+
+      .btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <div class="badge">🚀 Built for focus addicts</div>
+    <section class="hero">
+      <div class="badge">🚀 Built for focus addicts</div>
+      <h1>Lock In.<br><span>Actually Get Sh*t Done.</span></h1>
+      <p>
+        LockTfIn is a clean, distraction-free focus timer designed for students,
+        creators, and grinders who are tired of fake productivity.
+      </p>
+      <p class="hero-note">Need details first? Check out the how-it-works page.</p>
 
-    <h1>Lock In.<br><span>Actually Get Sh*t Done.</span></h1>
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://www.mediafire.com/file/4lw9f7srcddfwwd/Lock_tf_in_Setup_1.0.5.exe/file">
+          Download LockTfIn PC
+        </a>
+        <a class="btn btn-primary" href="https://www.mediafire.com/file/mme4lnru2ktn59e/LockTfIn_1.0.5.apk/file">
+          Download LockTfIn Android
+        </a>
+        <a class="btn btn-secondary" href="how.html">
+          See How It Works
+        </a>
+      </div>
 
-    <p>
-      LockTfIn is a clean, distraction-free focus timer designed for students,
-      creators, and grinders who are tired of fake productivity.
-    </p>
+      <div class="quick-stats">
+        <div class="stat">
+          <strong>Deep Work</strong>
+          <span>Designed to keep you focused</span>
+        </div>
+        <div class="stat">
+          <strong>Lightweight</strong>
+          <span>Fast and minimal app experience</span>
+        </div>
+        <div class="stat">
+          <strong>Cross-Platform</strong>
+          <span>PC + Android downloads available</span>
+        </div>
+      </div>
+    </section>
 
-    <p>
-      Make sure to check out how it works page.
-    </p>
-
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://www.mediafire.com/file/4lw9f7srcddfwwd/Lock_tf_in_Setup_1.0.5.exe/file">
-        Download LockTfIn PC
-      </a><br>
-       <a class="btn btn-primary" href="https://www.mediafire.com/file/mme4lnru2ktn59e/LockTfIn_1.0.5.apk/file">
-        Download LockTfIn Android
-      </a><br>
-      <a class="btn btn-secondary" href="how.html">
-        See How It Works
-      </a>
-    </div>
-
+    <h2 class="section-title">Why people pick <span>LockTfIn</span></h2>
     <div class="features">
       <div class="card">
         <h3>🧠 Deep Focus Mode</h3>
@@ -205,15 +307,15 @@
         <h3>⚡ Lightweight</h3>
         <p>Fast, minimal, and doesn’t cook your system.</p>
       </div>
-      
+
       <div class="card">
         <h3>💻 Updates</h3>
-        <p>The app is getting better everyday.</p>
+        <p>The app is getting better every day.</p>
       </div>
-      
+
       <div class="card">
         <h3>📱 Android Version</h3>
-        <p>IS OUT NOW! Still in developer mode.</p>
+        <p>Out now and still improving in developer mode.</p>
       </div>
     </div>
 
@@ -224,6 +326,3 @@
 
 </body>
 </html>
-
-
-
